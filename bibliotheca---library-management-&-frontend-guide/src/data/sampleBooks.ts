@@ -1,0 +1,212 @@
+import { Book, LogEntry } from '../types';
+
+export const INITIAL_BOOKS: Book[] = [
+  {
+    id: 'book-1',
+    title: 'The Great Gatsby',
+    author: 'F. Scott Fitzgerald',
+    isbn: '978-0743273565',
+    publishDate: '1925-04-10',
+    publisher: "Charles Scribner's Sons",
+    genre: 'Classic Literature',
+    description: 'The story of the mysteriously wealthy Jay Gatsby and his unrequited love for the beautiful Daisy Buchanan in Jazz Age New York.',
+    coverImage: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800',
+    pages: 180,
+    language: 'English',
+    addedDate: '2025-01-10T09:15:00.000Z',
+    status: 'available',
+    rating: 5,
+    location: 'Shelf A-12',
+    notes: 'Masterpiece of American literature.'
+  },
+  {
+    id: 'book-2',
+    title: 'Clean Code: A Handbook of Agile Software Craftsmanship',
+    author: 'Robert C. Martin',
+    isbn: '978-0132350884',
+    publishDate: '2008-08-01',
+    publisher: 'Prentice Hall',
+    genre: 'Computer Science',
+    description: 'Even bad code can function. But if code is not clean, it can bring a development organization to its knees. Learn how to write robust, readable, and maintainable software.',
+    coverImage: 'https://images.unsplash.com/photo-1532012164546-f432f2e3edd9?auto=format&fit=crop&q=80&w=800',
+    pages: 464,
+    language: 'English',
+    addedDate: '2025-01-12T14:30:00.000Z',
+    status: 'reading',
+    rating: 5,
+    location: 'Tech Bay 3',
+    notes: 'Essential reading for any software engineer.'
+  },
+  {
+    id: 'book-3',
+    title: 'To Kill a Mockingbird',
+    author: 'Harper Lee',
+    isbn: '978-0061120084',
+    publishDate: '1960-07-11',
+    publisher: 'J. B. Lippincott & Co.',
+    genre: 'Fiction',
+    description: 'The unforgettable novel of a childhood in a sleepy Southern town and the crisis of conscience that rocked it, focusing on lawyer Atticus Finch.',
+    coverImage: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=800',
+    pages: 336,
+    language: 'English',
+    addedDate: '2025-01-15T11:00:00.000Z',
+    status: 'completed',
+    rating: 5,
+    location: 'Shelf B-04',
+    notes: 'Pulitzer Prize winner.'
+  },
+  {
+    id: 'book-4',
+    title: 'Sapiens: A Brief History of Humankind',
+    author: 'Yuval Noah Harari',
+    isbn: '978-0062316097',
+    publishDate: '2014-02-10',
+    publisher: 'Harper',
+    genre: 'History & Anthropology',
+    description: 'Explores how biology and history have defined us and enhanced our understanding of what it means to be human, from ancient foragers to modern empires.',
+    coverImage: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800',
+    pages: 498,
+    language: 'English',
+    addedDate: '2025-01-20T16:45:00.000Z',
+    status: 'available',
+    rating: 4,
+    location: 'Non-Fiction C-01',
+    notes: 'Insightful look into human cognition and society.'
+  },
+  {
+    id: 'book-5',
+    title: 'Atomic Habits',
+    author: 'James Clear',
+    isbn: '978-0735211292',
+    publishDate: '2018-10-16',
+    publisher: 'Avery',
+    genre: 'Self-Development',
+    description: 'An easy and proven way to build good habits and break bad ones. Small changes lead to remarkable results through continuous 1% improvements.',
+    coverImage: 'https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=800',
+    pages: 320,
+    language: 'English',
+    addedDate: '2025-01-25T10:20:00.000Z',
+    status: 'reading',
+    rating: 5,
+    location: 'Shelf D-08',
+    notes: 'Practical framework for system design in personal life.'
+  },
+  {
+    id: 'book-6',
+    title: 'Dune',
+    author: 'Frank Herbert',
+    isbn: '978-0441172719',
+    publishDate: '1965-08-01',
+    publisher: 'Chilton Books',
+    genre: 'Science Fiction',
+    description: 'Set on the desert planet Arrakis, Dune tells the story of Paul Atreides, heir to a noble family tasked with ruling an inhospitable world.',
+    coverImage: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80&w=800',
+    pages: 688,
+    language: 'English',
+    addedDate: '2025-02-01T13:10:00.000Z',
+    status: 'wishlist',
+    rating: 5,
+    location: 'Sci-Fi Bay 1',
+    notes: 'Hugo and Nebula Award Winner.'
+  },
+  {
+    id: 'book-7',
+    title: 'Thinking, Fast and Slow',
+    author: 'Daniel Kahneman',
+    isbn: '978-0374533557',
+    publishDate: '2011-10-25',
+    publisher: 'Farrar, Straus and Giroux',
+    genre: 'Psychology',
+    description: 'Explores the two systems that drive the way we think: System 1 (fast, intuitive, emotional) and System 2 (slower, deliberative, logical).',
+    coverImage: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800',
+    pages: 512,
+    language: 'English',
+    addedDate: '2025-02-05T08:50:00.000Z',
+    status: 'available',
+    rating: 4,
+    location: 'Psychology Section',
+    notes: 'Nobel laureate perspective on behavioral economics.'
+  },
+  {
+    id: 'book-8',
+    title: 'JavaScript: The Good Parts',
+    author: 'Douglas Crockford',
+    isbn: '978-0596517748',
+    publishDate: '2008-05-01',
+    publisher: "O'Reilly Media",
+    genre: 'Computer Science',
+    description: 'Uncovers the beauty and elegance beneath JavaScript’s quirky quirks, highlighting objects, functions, inheritance, and arrays.',
+    coverImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
+    pages: 172,
+    language: 'English',
+    addedDate: '2025-02-10T15:15:00.000Z',
+    status: 'completed',
+    rating: 4,
+    location: 'Tech Bay 2',
+    notes: 'Timeless programming classic.'
+  }
+];
+
+export const INITIAL_LOGS: LogEntry[] = [
+  {
+    id: 'log-1',
+    action: 'add',
+    bookId: 'book-1',
+    bookTitle: 'The Great Gatsby',
+    timestamp: '2025-01-10T09:15:00.000Z',
+    details: 'Added to catalog by System Librarian'
+  },
+  {
+    id: 'log-2',
+    action: 'add',
+    bookId: 'book-2',
+    bookTitle: 'Clean Code',
+    timestamp: '2025-01-12T14:30:00.000Z',
+    details: 'Cataloged in Computer Science section'
+  },
+  {
+    id: 'log-3',
+    action: 'status_change',
+    bookId: 'book-2',
+    bookTitle: 'Clean Code',
+    timestamp: '2025-01-14T10:00:00.000Z',
+    details: 'Status changed to [Reading]'
+  },
+  {
+    id: 'log-4',
+    action: 'add',
+    bookId: 'book-3',
+    bookTitle: 'To Kill a Mockingbird',
+    timestamp: '2025-01-15T11:00:00.000Z',
+    details: 'New arrival accessioned'
+  },
+  {
+    id: 'log-5',
+    action: 'search',
+    timestamp: '2025-02-01T12:00:00.000Z',
+    details: 'Queried Open Library API for "Frank Herbert Sci-Fi"'
+  },
+  {
+    id: 'log-6',
+    action: 'add',
+    bookId: 'book-6',
+    bookTitle: 'Dune',
+    timestamp: '2025-02-01T13:10:00.000Z',
+    details: 'Imported from Open Library API to Wishlist'
+  }
+];
+
+export const GENRE_LIST = [
+  'All Genres',
+  'Classic Literature',
+  'Fiction',
+  'Science Fiction',
+  'Computer Science',
+  'History & Anthropology',
+  'Self-Development',
+  'Psychology',
+  'Biography & Memoir',
+  'Philosophy',
+  'Art & Design',
+  'Mystery & Thriller'
+];

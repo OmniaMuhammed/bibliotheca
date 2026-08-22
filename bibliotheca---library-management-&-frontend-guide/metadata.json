@@ -1,0 +1,6 @@
+{
+  "name": "Bibliotheca - Library Management & Frontend Guide",
+  "description": "A responsive single-page library management application inspired by NutriPlan with sidebar navigation, Open Library API integration, full CRUD operations, activity log book, and interactive Arabic beginner frontend tutorial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
